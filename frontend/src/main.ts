@@ -110,13 +110,12 @@ const renderOrder = (order: Order) => {
       
     </div>
   `
-  document.getElementById("remove")!.addEventListener("click", newListener);
   document.getElementById("order")!.innerHTML = content
-  
+  removeItems(order)
 
 }
 
-const removeItems = () => {
+const removeItems = (order: Order) => {
   let remove = document.getElementById("remove")
   if (remove !== null) {
     remove.textContent = "x";
@@ -158,11 +157,6 @@ const addListener = () => {
   if (order)
     renderOrder(order)
 }
-const newListener = () => {
-  removeItems()
-  updateOrderWithItem()
-  if (order)
-    renderOrder(order)
-}
+
 
 init()
